@@ -49,7 +49,6 @@ export default function Command() {
           frequency_penalty: 0,
           presence_penalty: 0,
         })
-        console.log(response.data.choices[0])
         const generatedAction = JSON.parse(response.data.choices[0].text.match(/{([^}]+)}/)[0]) as GeneratedAction
         setGeneratedAction(generatedAction)
       } catch (error) {

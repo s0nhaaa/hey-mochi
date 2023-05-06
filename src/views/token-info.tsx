@@ -21,7 +21,6 @@ export const TokenInfo = ({ generatedAction, action }: TokenTrendProps) => {
       setIsLoading(true)
       try {
         const queryUrl = `${MOCHI_HOST}${generatedAction?.endpoint.toLowerCase()}`
-        console.log(queryUrl)
 
         const response = await axios.get<CoinQuery>(queryUrl)
         setData(response.data)
@@ -52,10 +51,7 @@ export const TokenInfo = ({ generatedAction, action }: TokenTrendProps) => {
     setIsLoading(true)
     try {
       const url = `${MOCHI_HOST}/defi/coins/${id}`
-      console.log(url)
-
       const response = await axios.get<TokenInfomation>(url)
-      console.log(response.data)
 
       setTokenData(response.data)
       setIsShowingDetail(true)
